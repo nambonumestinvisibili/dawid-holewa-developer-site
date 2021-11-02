@@ -15,6 +15,7 @@
     "clean": "gatsby clean"
   },
   "dependencies": {
+    "3d-react-carousal": "^4.0.2",
     "babel-plugin-styled-components": "^1.13.3",
     "gatsby": "^3.14.3",
     "gatsby-plugin-google-analytics": "^3.14.0",

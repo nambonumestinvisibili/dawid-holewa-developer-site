@@ -5,6 +5,7 @@ import Navbar from '../../components/Navbar/Navbar'
 import AboutPage from '../AboutPage/AboutPage'
 import Separator from '../../components/Separator/Separator'
 import WorkPage from '../WorkPage/WorkPage'
+import TechStackPage from '../TechStackPage/TechStackPage'
 
 const Site = () => {
     return (
@@ -16,7 +17,16 @@ const Site = () => {
             <Separator />
             <WorkPage />
             <Separator />
-            
+            <Separator />
+            <Separator />
+            <Separator />
+            <Separator />
+            <Separator />
+            <Separator />
+            <Separator />
+
+            <TechStackPage />
+            <Separator />
         </>
     )
 }
