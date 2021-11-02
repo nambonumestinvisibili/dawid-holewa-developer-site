@@ -2,7 +2,7 @@ import React from 'react'
 import Rellax from 'rellax'
 import styled from 'styled-components'
 import Button from '../../components/Buttons/Button'
-import { BlackColour } from '../../components/responsiveness/ColourConstants'
+import { BlackColour, WhiteColour } from '../../components/responsiveness/ColourConstants'
 import { useRef, useEffect, useState } from 'react'
 
 const StyledProjectTile = styled.div`
@@ -19,7 +19,6 @@ const StyledProjectTile = styled.div`
         if (props.extended) {
             return `
                 height: 200%;
-                filter: brightness(10%);
             `
         }
     }}
@@ -34,10 +33,18 @@ const StyledProjectTitle = styled.p`
     color: ${BlackColour};
     user-select: none;
     line-height: 100%;
+    background-color: ${props => props.extended && WhiteColour};
 
     &:hover {
         opacity: 30%;
     }
+`
+
+const Overlay = styled.div`
+    width: 100%;
+    height: 100%;
+    background: ${props => props.extended && 'rgba(0,0,0, 0.7)'};
+    
 `
 
 const ProjectTile = ({ title, imageSource }) => {
@@ -63,12 +70,14 @@ const ProjectTile = ({ title, imageSource }) => {
                 imageSource={imageSource}
                 extended={isExtended}
             >
-                <StyledProjectTitle 
-                    onClick={() => {setIsExtended(!isExtended)}}
-                >
-                    { title }
-                </StyledProjectTitle>
-                
+                <Overlay extended={isExtended} >
+                    <StyledProjectTitle 
+                        extended={isExtended}
+                        onClick={() => {setIsExtended(!isExtended)}}
+                    >
+                        { title }
+                    </StyledProjectTitle>
+                </Overlay>
             </StyledProjectTile>
             {/* <ProjectInfoPanel /> */}
         </>
