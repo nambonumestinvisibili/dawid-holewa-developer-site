@@ -1,6 +1,7 @@
 import React from 'react'
 import NavbarLink from './NavbarLink'
 import styled from 'styled-components'
+import { ANCHORS } from '../../constants/anchors'
 
 const StyledNavbar = styled.div`
     display: flex;
@@ -20,11 +21,11 @@ const StyledNavbar = styled.div`
 const Navbar = () => {
     return (
         <StyledNavbar>
-            <NavbarLink text={"Home"}/>
-            <NavbarLink text={"About"}/>
-            <NavbarLink text={"Work"}/>
-            <NavbarLink text={"Stack"}/>
-            <NavbarLink text={"Contact"} ender/>
+            <NavbarLink text={"Home"} toLink={ANCHORS.WELCOME}/>
+            <NavbarLink text={"About"} toLink={ANCHORS.ABOUT} />
+            <NavbarLink text={"Work"} toLink={ANCHORS.WORK} />
+            <NavbarLink text={"Stack"} toLink={ANCHORS.STACK}/>
+            <NavbarLink text={"Contact"} ender toLink={ANCHORS.CONTACT}/>
         </StyledNavbar>
     )
 }

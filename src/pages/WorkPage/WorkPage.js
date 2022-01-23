@@ -6,6 +6,7 @@ import todoListImage from '../../images/todo-list.jpg'
 import Separator from '../../components/Separator/Separator'
 import ProjectTile from './ProjectTile'
 import styled from 'styled-components'
+import { ANCHORS } from '../../constants/anchors'
 
 const StyledWorkPage = styled.div`
     height: ${ ({ extended }) => extended ? '80vw' : '40vw' };
@@ -38,7 +39,7 @@ const Projects = [
 ]
 const WorkPage = () => {
     return (
-        <StyledWorkPage>
+        <StyledWorkPage id={ANCHORS.WORK}>
             <Title>
                 Check out my <YellowElement>work</YellowElement>
             </Title> 

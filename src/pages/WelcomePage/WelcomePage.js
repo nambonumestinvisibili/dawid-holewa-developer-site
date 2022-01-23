@@ -3,6 +3,7 @@ import { BigScreen } from '../../components/responsiveness/Layout'
 import styled from 'styled-components'
 import { YellowColour } from '../../components/responsiveness/ColourConstants'
 import { leftMargin } from '../../components/responsiveness/Utils'
+import { ANCHORS } from '../../constants/anchors'
 
 const BigTitle = styled.div`
     font-family: 'Archivo Black';
@@ -20,7 +21,7 @@ const SmallerTitle = styled.div`
 const WelcomePage = () => {
     return (
         <>
-            <BigTitle>
+            <BigTitle id={ANCHORS.WELCOME}>
                 Hello there!
             </ BigTitle>
             <SmallerTitle>

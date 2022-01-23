@@ -3,6 +3,7 @@ import Title from '../../components/Title/Title'
 import YellowElement from '../../components/YellowElement/YellowElement'
 import Text from '../../components/Text/Text'
 import styled from 'styled-components'
+import { ANCHORS } from '../../constants/anchors'
 
 const AboutText = styled(Text)`
     margin-top: 3vw;
@@ -11,7 +12,7 @@ const AboutText = styled(Text)`
 const AboutPage = () => {
     return (
         <>
-            <Title>
+            <Title id={ANCHORS.ABOUT}>
                 Get to know me <YellowElement> better! </ YellowElement>
             </Title>
             <AboutText>

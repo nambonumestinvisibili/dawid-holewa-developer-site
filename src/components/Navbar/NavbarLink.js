@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-scroll'
 import styled from 'styled-components'
 import { YellowColour } from '../responsiveness/ColourConstants'
 
@@ -14,10 +15,10 @@ const StyledNavbarLink = styled.div`
     }
 `
 
-const NavbarLink = ({ text, ender }) => {
+const NavbarLink = ({ text, ender, toLink }) => {
     return (
         <StyledNavbarLink ender={ender}>
-            { text }
+            <Link to={toLink} scroll={true}>{ text }</Link>
         </StyledNavbarLink>
     )
 }
