@@ -15,7 +15,9 @@ const AboutPage = () => {
                 Get to know me <YellowElement> better! </ YellowElement>
             </Title>
             <AboutText>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam placerat, turpis et pharetra commodo, metus elit dignissim nulla, pulvinar tincidunt neque leo vel ipsum. Mauris iaculis ut lacus dignissim interdum. Phasellus eu nulla non felis congue vehicula sed quis lacus. Vivamus quis blandit eros. Maecenas ac odio eros. Sed viverra turpis ut arcu pharetra volutpat. Suspendisse convallis felis nec leo lobortis auctor. Integer condimentum semper nunc, vitae porta lorem condimentum quis. Curabitur sollicitudin sapien sed vestibulum faucibus. Nunc in lectus congue, sodales magna et, aliquet metus. Duis ut nisi sit amet diam maximus pretium nec quis sem.
+                Dedicated and efficient developer who has an eye for elegant and high-performance solutions. <br/> 
+                A fast learner and self-development possibilities seeker.
+                After hours a snowboarder, music-lover and a traveler who enjoys spending time with his friends and family
             </AboutText>
         </>
     )

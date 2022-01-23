@@ -15,7 +15,7 @@ const TechStackItems = [
         id: 1,
         name: 'Java',
         description: 'some description..........',
-        image: null
+        image: "/images/stackImages/javabw.png"
     },
     {
         id: 2,
@@ -56,7 +56,7 @@ const TechCarousel = () => {
 
     return (
         <div>
-            <Carousel slides={TechStackItems.map(item => <CarouselItem image={item.image} name={item.name} />)}/>
+            <Carousel slides={TechStackItems.map(item => <CarouselItem imageSrc={item.image} name={item.name} />)}/>
             <TechInfo techObject={currentTechObject} />
         </div>
     )

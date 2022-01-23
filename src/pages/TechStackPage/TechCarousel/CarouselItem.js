@@ -1,17 +1,24 @@
 import React from 'react'
 import styled from 'styled-components'
-import { YellowColour } from '../../../components/responsiveness/ColourConstants'
+import { BlackColour, YellowColour } from '../../../components/responsiveness/ColourConstants'
 
 const StyledCarouselItem = styled.div`
     width: 30vw;
     height: 20vw;
-    background-color: ${YellowColour};
+    display: flex;
+    justify-content: center;
+    align-items: center;
 `
 
-const CarouselItem = ({ name, image }) => {
+const StyledImage = styled.img`
+    height: 10vw;
+    width: auto;
+`
+
+const CarouselItem = ({ name, imageSrc }) => {
     return (
         <StyledCarouselItem>
-            { name }
+            <StyledImage src={imageSrc} />
         </StyledCarouselItem>
     )
 }

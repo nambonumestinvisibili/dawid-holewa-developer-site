@@ -4,28 +4,27 @@ import styled from 'styled-components'
 import Button from '../../components/Buttons/Button'
 import { BlackColour, WhiteColour } from '../../components/responsiveness/ColourConstants'
 import { useRef, useEffect, useState } from 'react'
+import ProjectInfoPanel from './ProjectInfoPanel/ProjectInfoPanel'
+import { COLORS } from '../../constants/colors'
+import { useResponsiveness } from '../../hooks/responsiveness/useResponsiveness'
 
 const StyledProjectTile = styled.div`
     width: 100%;
     height: 100%;
+    min-height: 10vw;
+    max-height: 700px;
     margin: 0 auto;
     background: url(${ props => props.imageSource });
     background-repeat: no-repeat;
     background-position: center center;
     background-size: cover;
     position: relative;
-
-    ${props => {
-        if (props.extended) {
-            return `
-                height: 200%;
-            `
-        }
-    }}
+    transition: height 1s;
+    ${({ extended }) => extended && 'height: 300%;'}
 `
 
 const StyledProjectTitle = styled.p`
-    font-size: 144px;
+    font-size: calc(30px + 8vw);
     font-family: Archivo Black;
     opacity: 18%;
     position: absolute;
@@ -43,11 +42,11 @@ const StyledProjectTitle = styled.p`
 const Overlay = styled.div`
     width: 100%;
     height: 100%;
-    background: ${props => props.extended && 'rgba(0,0,0, 0.7)'};
+    background: ${props => props.extended && COLORS.black_70};
     
 `
 
-const ProjectTile = ({ title, imageSource }) => {
+const ProjectTile = ({ title, imageSource, subInfo }) => {
 
     const imageRef = useRef(null)
     const [isExtended, setIsExtended] = useState(false)
@@ -61,26 +60,26 @@ const ProjectTile = ({ title, imageSource }) => {
     //         vertical: true,
     //         horizontal: false
     //     })
-    // }, [])
+    // }, []) 
+    const { isMobileDevice } = useResponsiveness()
 
     return (
-        <>
-            <StyledProjectTile 
-                ref={imageRef} 
-                imageSource={imageSource}
-                extended={isExtended}
-            >
-                <Overlay extended={isExtended} >
-                    <StyledProjectTitle 
-                        extended={isExtended}
-                        onClick={() => {setIsExtended(!isExtended)}}
-                    >
-                        { title }
-                    </StyledProjectTitle>
-                </Overlay>
-            </StyledProjectTile>
-            {/* <ProjectInfoPanel /> */}
-        </>
+        <StyledProjectTile 
+            ref={imageRef} 
+            imageSource={imageSource}
+            extended={isExtended}
+            isSmallView={isMobileDevice}
+        >
+            <Overlay extended={isExtended} >
+                <StyledProjectTitle 
+                    extended={isExtended}
+                    onClick={() => {setIsExtended(!isExtended)}}
+                >
+                    { title }
+                </StyledProjectTitle>
+            </Overlay>
+            <ProjectInfoPanel subInfo={subInfo} visible={isExtended} />
+        </StyledProjectTile>
     )
 }
 

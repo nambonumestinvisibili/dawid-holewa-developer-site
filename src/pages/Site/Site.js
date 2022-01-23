@@ -17,16 +17,7 @@ const Site = () => {
             <Separator />
             <WorkPage />
             <Separator />
-            <Separator />
-            <Separator />
-            <Separator />
-            <Separator />
-            <Separator />
-            <Separator />
-            <Separator />
-
             <TechStackPage />
-            <Separator />
         </>
     )
 }
